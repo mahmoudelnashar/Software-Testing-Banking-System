@@ -9,4 +9,6 @@ module com.example.banking_system {
 
     opens com.example.banking_system to javafx.fxml;
     exports com.example.banking_system;
+    exports com.example.banking_system.controllers;
+    opens com.example.banking_system.controllers to javafx.fxml;
 }
