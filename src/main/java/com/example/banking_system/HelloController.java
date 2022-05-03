@@ -1,6 +1,7 @@
 package com.example.banking_system;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 
 public class HelloController {
@@ -8,5 +9,7 @@ public class HelloController {
     private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {}
+    protected void onHelloButtonClick() {
+        System.out.println("Button Clicked!!");
+    }
 }

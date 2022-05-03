@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-    private Stage stage;
+    private static Stage stage;
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
         stage.show();
     }
     public static Stage getStage(){
-        return this.stage;
+        return stage;
     }
 
     public static void main(String[] args) {
