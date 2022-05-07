@@ -14,7 +14,10 @@
 }
 
 .label {
-    -fx-text-fill: #707070
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI Bold';
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
 }
 
 .button:hover{

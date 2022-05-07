@@ -14,10 +14,26 @@
 }
 
 .label {
-    -fx-text-fill: #707070
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI Bold';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
 }
 
-.button:hover{
+#deposit_btn:hover{
     -fx-background-color: #10988A;
     -fx-cursor: hand;
+}
+
+#cancel_btn{
+    -fx-background-color: #F26A6A;
+}
+
+#cancel_btn:hover{
+    -fx-background-color: #ad332d;
+    -fx-cursor: hand;
+}
+
+.text-field{
+    -fx-background-radius: 5px;
 }

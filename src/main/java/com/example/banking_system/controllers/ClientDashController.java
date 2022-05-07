@@ -14,9 +14,9 @@ import java.io.IOException;
 
 
 public class ClientDashController {
-    Parent root;
-    Stage stage;
-    Scene scene;
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
 
     @FXML
     TextField textf_user;
@@ -31,6 +31,23 @@ public class ClientDashController {
     public void to_transfer(ActionEvent event) throws IOException {
         //some_logic
         switch_scene("transfer.fxml", event);
+    }
+
+    @FXML
+    public  void to_balance(ActionEvent e) throws IOException {
+        switch_scene("balance.fxml", e);
+    }
+
+    @FXML
+    public void to_history(ActionEvent e) throws IOException {
+        switch_scene("history.fxml", e);
+
+    }
+
+    @FXML
+    public void to_edit(ActionEvent e) throws  IOException{
+        switch_scene("edit-client.fxml", e);
+
     }
 
     private void switch_scene(String resource, ActionEvent event) throws IOException {

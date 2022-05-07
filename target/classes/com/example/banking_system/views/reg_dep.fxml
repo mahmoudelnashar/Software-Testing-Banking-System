@@ -12,7 +12,7 @@
 
 <HBox alignment="CENTER" minHeight="800.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.banking_system.controllers.ClientDashController">
     <children>
-        <GridPane alignment="CENTER" minHeight="800.0" minWidth="1280.0" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../css/client-dash.css">
+        <GridPane alignment="CENTER" minHeight="800.0" minWidth="1280.0" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../css/reg_dep.css">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="548.0" minWidth="10.0" prefWidth="459.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="361.0" />
@@ -43,8 +43,8 @@
                 </VBox>
                 <VBox alignment="CENTER" spacing="38.0" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="edit_btn" mnemonicParsing="false" onAction="#to_edit" text="Edit Info" />
-                        <Button fx:id="history_btn" mnemonicParsing="false" onAction="#to_history" text="Transaction &#10;History" textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="edit_btn" mnemonicParsing="false" text="Edit Info" />
+                        <Button fx:id="history_btn" mnemonicParsing="false" text="Transaction &#10;History" textAlignment="CENTER" wrapText="true" />
                     </children>
                     <padding>
                         <Insets bottom="30.0" left="190.0" />
@@ -52,7 +52,7 @@
                 </VBox>
                 <VBox alignment="CENTER" spacing="38.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="balance_btn" mnemonicParsing="false" onAction="#to_balance" text="Check Balance" />
+                        <Button fx:id="balance_btn" mnemonicParsing="false" text="Check Balance" />
                         <Button fx:id="transfer_btn" mnemonicParsing="false" onAction="#to_transfer" text="Transfer Money" />
                     </children>
                     <opaqueInsets>

@@ -10,20 +10,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EditClientController {
-
+public class HistoryController {
     private Parent root;
     private Stage stage;
     private Scene scene;
 
     @FXML
     public void back_click(ActionEvent e) throws IOException {
-        switch_scene("client-dash.fxml", e);
-
-    }
-
-    @FXML
-    public void save_click(ActionEvent e) throws IOException {
         switch_scene("client-dash.fxml", e);
 
     }
@@ -34,23 +27,5 @@ public class EditClientController {
         scene = new Scene(root, 1280, 800);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    public void edit_user(ActionEvent e){
-
-    }
-    public void edit_email(ActionEvent e){
-
-    }
-    public void edit_addr(ActionEvent e){
-
-    }
-    public void edit_pass(ActionEvent e){
-
-    }public void edit_tele(ActionEvent e){
-
-    }public void edit_mob(ActionEvent e){
-
     }
 }

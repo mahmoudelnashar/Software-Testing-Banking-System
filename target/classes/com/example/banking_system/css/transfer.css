@@ -22,6 +22,7 @@
 
 .button:hover{
     -fx-background-color: #10988A;
+    -fx-cursor: hand;
 }
 
 #cancel_btn{
@@ -30,6 +31,7 @@
 
 #cancel_btn:hover{
     -fx-background-color: #ad332d;
+    -fx-cursor: hand;
 }
 
 .text-field{

@@ -13,10 +13,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../css/edit-client.css" fx:controller="com.example.banking_system.controllers.EditClientController">
+<HBox alignment="CENTER" stylesheets="@../css/edit-client.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.banking_system.controllers.EditClientController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" >
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0">
          <left>
             <GridPane minHeight="500.0" prefHeight="650.0" prefWidth="600.0" BorderPane.alignment="CENTER">
               <columnConstraints>
@@ -116,15 +115,39 @@
                         <Insets left="17.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <TextField disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="textf_ssn" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_name" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_pass" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_tele" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_mob" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_addr" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_occ" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="textf_mart" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="textf_salary" disable="true" prefHeight="41.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font></TextField>
                </children>
             </GridPane>
          </left>
@@ -165,12 +188,12 @@
                   </Label>
                   <HBox alignment="CENTER" prefHeight="108.0" prefWidth="406.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <children>
-                        <Button fx:id="save_btn" mnemonicParsing="false" text="Save">
+                        <Button fx:id="save_btn" mnemonicParsing="false" text="Save" onAction="#save_click">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="cancel_btn" mnemonicParsing="false" text="Cancel">
+                        <Button fx:id="cancel_btn" mnemonicParsing="false" text="Cancel" onAction="#back_click">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -179,7 +202,10 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="403.0" spacing="17.0" GridPane.columnIndex="1">
                      <children>
-                        <TextField disable="true" minHeight="41.0" minWidth="260.0" prefHeight="41.0" prefWidth="260.0" />
+                        <TextField fx:id="textf_user" disable="true" minHeight="41.0" minWidth="260.0" prefHeight="41.0" prefWidth="260.0">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font></TextField>
                         <Label fx:id="edit_user_label" text="Edit" underline="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -189,7 +215,10 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="399.0" spacing="17.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <TextField disable="true" minHeight="41.0" minWidth="260.0" prefHeight="41.0" prefWidth="260.0" />
+                        <TextField fx:id="textf_email" disable="true" minHeight="41.0" minWidth="260.0" prefHeight="41.0" prefWidth="260.0">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font></TextField>
                         <Label fx:id="edit_email_label" text="Edit" underline="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
