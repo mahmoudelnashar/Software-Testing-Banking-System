@@ -1,0 +1,93 @@
+.root {
+    -fx-background-color : #EEEEEE;
+}
+.text-field {
+    -fx-background-radius: 5px;
+    -fx-border-width:1px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+
+
+.button {
+    -fx-background-radius: 25em;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #68BEB5;
+    -fx-font-family: 'Segoe UI Bold';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-min-width: 188px;
+    -fx-min-height: 57px;
+}
+
+.label {
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI Bold';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+#edit_pass_label{
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI light';
+    -fx-font-size: 16px;
+    -fx-font-weight: light;
+}
+
+#edit_tele_label{
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI light';
+    -fx-font-size: 16px;
+    -fx-font-weight: light;
+}
+
+
+#edit_mob_label{
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI light';
+    -fx-font-size: 16px;
+    -fx-font-weight: light;
+}
+
+
+#edit_addr_label{
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI light';
+    -fx-font-size: 16px;
+    -fx-font-weight: light;
+}
+
+#edit_user_label{
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI light';
+    -fx-font-size: 16px;
+    -fx-font-weight: light;
+
+}
+
+#edit_email_label{
+    -fx-text-fill: #707070;
+    -fx-font-family: 'Segoe UI light';
+    -fx-font-size: 16px;
+    -fx-font-weight: light;
+}
+
+#cancel_btn{
+    -fx-background-radius: 25em;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #F26A6A;
+    -fx-font-family: 'Segoe UI Bold';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-min-width: 188px;
+    -fx-min-height: 57px;
+}
+
+.button:hover{
+    -fx-background-color:#10988A;
+}
+
+#cancel_btn:hover{
+    -fx-background-color:#ad332d;
+
+}
