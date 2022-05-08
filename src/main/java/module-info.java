@@ -6,6 +6,8 @@ module com.example.banking_system {
     requires com.dlsc.formsfx;
     requires validatorfx;
     requires org.kordamp.bootstrapfx.core;
+    requires com.opencsv;
+    requires org.apache.commons.lang3;
 
     opens com.example.banking_system to javafx.fxml;
     exports com.example.banking_system;

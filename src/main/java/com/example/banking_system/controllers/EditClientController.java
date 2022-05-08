@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,12 +19,24 @@ public class EditClientController {
     private Scene scene;
 
     @FXML
+    private TextField textf_user;
+    @FXML
+    private TextField textf_pass;
+    @FXML
+    private TextField textf_email;
+    @FXML
+    private TextField textf_mob;
+    @FXML
+    private TextField textf_tele;
+    @FXML
+    private TextField textf_addr;
+
+
     public void back_click(ActionEvent e) throws IOException {
         switch_scene("client-dash.fxml", e);
 
     }
 
-    @FXML
     public void save_click(ActionEvent e) throws IOException {
         switch_scene("client-dash.fxml", e);
 
@@ -36,21 +50,16 @@ public class EditClientController {
         stage.show();
     }
 
-    @FXML
-    public void edit_user(ActionEvent e){
-
+    public void edit_user(MouseEvent e){
+        textf_user.setDisable(false);
     }
-    public void edit_email(ActionEvent e){
-
+    public void edit_email(MouseEvent e){
+        textf_email.setDisable(false);
     }
-    public void edit_addr(ActionEvent e){
-
+    public void edit_addr(MouseEvent e){
+        textf_addr.setDisable(false);
     }
-    public void edit_pass(ActionEvent e){
-
-    }public void edit_tele(ActionEvent e){
-
-    }public void edit_mob(ActionEvent e){
-
-    }
+    public void edit_pass(MouseEvent e){ textf_pass.setDisable(false); }
+    public void edit_tele(MouseEvent e){ textf_tele.setDisable(false); }
+    public void edit_mob(MouseEvent e){ textf_mob.setDisable(false); }
 }
