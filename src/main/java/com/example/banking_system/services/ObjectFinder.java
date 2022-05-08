@@ -20,7 +20,7 @@ public class ObjectFinder {
 
     public static List<Transaction> getTransactions(String client_id) throws FileNotFoundException {
         transactions = new CsvToBeanBuilder(new FileReader("/com/example/banking_system/database/"+client_id+".csv"))
-                .withType(Client.class).build().parse();
+                .withType(Transaction.class).build().parse();
 
         return transactions;
     }
