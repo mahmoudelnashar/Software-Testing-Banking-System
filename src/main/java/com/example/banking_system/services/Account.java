@@ -8,6 +8,11 @@ public class Account {
     @CsvBindByName(column = "account_number", required = true)
     private String id;
 
+    public Account(int balance, String id) {
+        this.balance = balance;
+        this.id = id;
+    }
+
     public int getBalance() {
         return balance;
     }

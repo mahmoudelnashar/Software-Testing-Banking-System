@@ -16,6 +16,12 @@ public class Transaction {
     @CsvBindByName(column = "amount", required = true)
     private int amount;
 
+
+    public Transaction(String type, int amount) {
+        this.type = type;
+        this.amount = amount;
+    }
+
     public String getId() {
         return id;
     }
