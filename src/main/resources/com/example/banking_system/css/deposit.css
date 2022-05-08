@@ -20,7 +20,7 @@
     -fx-font-weight: bold;
 }
 
-#deposit_btn:hover{
+.button:hover{
     -fx-background-color: #10988A;
     -fx-cursor: hand;
 }

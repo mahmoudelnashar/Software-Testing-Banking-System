@@ -35,8 +35,8 @@
                     <GridPane.margin>
                         <Insets right="69.0" />
                     </GridPane.margin></Label>
-                <TextField fx:id="acc_no_txt" prefHeight="41.0" prefWidth="260.0" promptText="Account Number" GridPane.columnIndex="1" />
-                <TextField fx:id="amount_txt" prefHeight="41.0" prefWidth="260.0" promptText="Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtf_acc_no" prefHeight="41.0" prefWidth="260.0" promptText="Account Number" GridPane.columnIndex="1" />
+                <TextField fx:id="txtf_amount" prefHeight="41.0" prefWidth="260.0" promptText="Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label fx:id="amount_lbl" text="Amount :" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
                     <GridPane.margin>
                         <Insets right="133.0" />
@@ -49,7 +49,7 @@
         </GridPane>
         <HBox prefHeight="248.0" prefWidth="658.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
             <children>
-                <Button fx:id="transfer_btn" mnemonicParsing="false" text="Transfer Money">
+                <Button fx:id="transfer_btn" mnemonicParsing="false" onAction="#transfer_to_ClientDash" text="Transfer Money">
                     <HBox.margin>
                         <Insets left="100.0" top="20.0" />
                     </HBox.margin>

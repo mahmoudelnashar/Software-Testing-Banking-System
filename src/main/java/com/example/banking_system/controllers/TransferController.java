@@ -27,6 +27,13 @@ public class TransferController {
         switch_scene("client-dash.fxml", event);
     }
 
+    public void transfer_to_ClientDash(ActionEvent event) throws IOException {
+        //some_logic
+        switch_scene("client-dash.fxml", event);
+    }
+
+
+
     private void switch_scene(String resource, ActionEvent event) throws IOException {
         String path = "/com/example/banking_system/views/" + resource;
         root  = FXMLLoader.load(getClass().getResource(path));
