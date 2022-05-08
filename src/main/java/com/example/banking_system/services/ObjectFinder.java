@@ -43,6 +43,13 @@ public class ObjectFinder {
     }
     public void writeTransaction(List<Transaction> beans, String client_id) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
         String path = "/com/example/banking_system/database/"+client_id+".csv";
+        File f = new File(path);
+        if(!f.exists() && !f.isDirectory()){
+            f.createNewFile();
+            FileWriter filewriter = new FileWriter(path);
+            filewriter.write("id, type, amount");
+            filewriter.close();
+        }
         Writer writer = new FileWriter(path);
         StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
         beanToCsv.write(beans);
