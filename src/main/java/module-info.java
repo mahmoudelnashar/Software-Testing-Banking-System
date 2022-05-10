@@ -8,7 +8,7 @@ module com.example.banking_system {
     requires org.kordamp.bootstrapfx.core;
     requires com.opencsv;
     requires org.apache.commons.lang3;
-
+    requires java.sql;
     opens com.example.banking_system to javafx.fxml;
     exports com.example.banking_system;
     exports com.example.banking_system.controllers;

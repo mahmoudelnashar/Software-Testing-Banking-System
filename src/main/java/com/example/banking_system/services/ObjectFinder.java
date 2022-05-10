@@ -7,19 +7,26 @@ import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class ObjectFinder {
     public static List<Client> clients;
     public static List<Transaction> transactions;
 
-    public static void init() throws FileNotFoundException {
-        clients = new CsvToBeanBuilder(new FileReader("/com/example/banking_system/database/clients.csv"))
-                .withType(Client.class).build().parse();
+    public static void init() throws FileNotFoundException, URISyntaxException {
+        FileReader file = new FileReader(Paths.get(ObjectFinder
+                .class.getResource("/com/example/banking_system/database/clients.csv")
+                .toURI()).toFile().getAbsolutePath());
+
+        clients = new CsvToBeanBuilder(file).withType(Client.class).build().parse();
     }
 
-    public static List<Transaction> getTransactions(String client_id) throws FileNotFoundException {
-        transactions = new CsvToBeanBuilder(new FileReader("/com/example/banking_system/database/"+client_id+".csv"))
+    public static List<Transaction> getTransactions(String client_id) throws FileNotFoundException, URISyntaxException {
+        transactions = new CsvToBeanBuilder(new FileReader(Paths.get(ObjectFinder
+                .class.getResource("/com/example/banking_system/database/clients.csv")
+                .toURI()).toFile().getAbsolutePath()))
                 .withType(Transaction.class).build().parse();
 
         return transactions;

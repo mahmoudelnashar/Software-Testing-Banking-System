@@ -12,25 +12,25 @@ import java.nio.file.Path;
 import java.util.stream.Stream;
 
 public class Client {
-    @CsvBindByName
+    @CsvBindByName(column = "id", required = true)
     private String id;
-    @CsvBindByName
+    @CsvBindByName(column = "name", required = true)
     private String name;
-    @CsvBindByName
+    @CsvBindByName(column = "addr", required = true)
     private String addr;
-    @CsvBindByName
+    @CsvBindByName(column = "mob", required = true)
     private String mob;
-    @CsvBindByName
+    @CsvBindByName(column = "tele", required = true)
     private String tele;
-    @CsvBindByName
+    @CsvBindByName(column = "occupation")
     private String occupation;
-    @CsvBindByName
+    @CsvBindByName(column = "salary")
     private int salary;
-    @CsvBindByName
+    @CsvBindByName(column = "username", required = true)
     private String username;
-    @CsvBindByName
+    @CsvBindByName(column = "pass", required = true)
     private String pass;
-    @CsvBindByName
+    @CsvBindByName(column = "email", required = true)
     private String email;
     @CsvRecurse
     private Account account;
