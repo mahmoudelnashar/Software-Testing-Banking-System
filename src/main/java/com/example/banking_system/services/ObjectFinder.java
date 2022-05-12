@@ -98,8 +98,10 @@ public class ObjectFinder {
         writer.close();
     }
 
-    public static void writeTransaction(List<Transaction> beans, String client_id) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, URISyntaxException {
-        transactions.addAll(beans);
+    public static void writeTransaction(List<Transaction> beans, String client_id, boolean add) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, URISyntaxException {
+        if(add){
+            transactions.addAll(beans);
+        }
         String source = Paths.get(ObjectFinder.class.getResource("/com/example/banking_system/database").toURI()).toFile().getAbsolutePath();
         String path = source+"/"+client_id+".csv";
         File f = new File(path);

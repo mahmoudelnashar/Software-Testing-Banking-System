@@ -1,2 +1,4 @@
 id,amount,type
 1,120,Account Opening
+2,1000,Money Transfer(Deposit)
+3,100,Money Transfer(Credit)

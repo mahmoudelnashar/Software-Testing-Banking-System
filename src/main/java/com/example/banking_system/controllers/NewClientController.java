@@ -96,7 +96,7 @@ public class NewClientController {
             Transaction tr = new Transaction("Account Opening", Integer.valueOf(textf_deposit_amnt.getText()));
             List<Transaction> tl = List.of(new Transaction[]{tr});
             ObjectFinder.writeClient(l);
-            ObjectFinder.writeTransaction(tl, c.getId());
+            ObjectFinder.writeTransaction(tl, c.getId(), false);
             clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Client Added Successfully!!");

@@ -3,7 +3,6 @@ package com.example.banking_system.controllers;
 import com.example.banking_system.services.Client;
 import com.example.banking_system.services.ObjectFinder;
 import com.opencsv.exceptions.CsvException;
-import com.opencsv.exceptions.CsvValidationException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

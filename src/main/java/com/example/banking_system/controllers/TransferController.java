@@ -3,9 +3,7 @@ package com.example.banking_system.controllers;
 import com.example.banking_system.services.Client;
 import com.example.banking_system.services.ObjectFinder;
 import com.example.banking_system.services.Transaction;
-import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvException;
-import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import com.opencsv.exceptions.CsvValidationException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +12,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -55,10 +52,16 @@ public class TransferController {
                 if(client.getAccount().decrease_balance(Integer.parseInt(txtf_amount.getText()))){
                     c.getAccount().increase_balance(Integer.parseInt(txtf_amount.getText()));
                     ObjectFinder.update(c);
-                    Transaction transaction = new Transaction("Money Transfer", Integer.valueOf(txtf_amount.getText()), c.getId());
+                    Transaction transaction = new Transaction("Money Transfer(Deposit)", Integer.valueOf(txtf_amount.getText()), c.getId());
+                    Transaction transaction2 = new Transaction("Money Transfer(Credit)", Integer.valueOf(txtf_amount.getText()), client.getId());
                     List<Transaction> t = List.of(new Transaction[]{transaction});
-                    ObjectFinder.writeTransaction(t, c.getId());
+                    ObjectFinder.writeTransaction(t, c.getId(), false);
+                    t = List.of(new Transaction[]{transaction2});
+                    ObjectFinder.writeTransaction(t, client.getId(), true);
+                    ObjectFinder.update(client);
                     alert(Alert.AlertType.INFORMATION, "Success", "Transaction Executed Successfully");
+                    txtf_amount.clear();
+                    txtf_acc_no.clear();
                 } else{
                     alert(Alert.AlertType.ERROR, "Failure!", "Insufficient Balance");
                 }

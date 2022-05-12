@@ -3,10 +3,7 @@ package com.example.banking_system.controllers;
 import com.example.banking_system.services.Client;
 import com.example.banking_system.services.ObjectFinder;
 import com.example.banking_system.services.Transaction;
-import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvException;
-import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
-import com.opencsv.exceptions.CsvValidationException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +11,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -49,7 +45,7 @@ public class DepositController {
                 ObjectFinder.update(c);
                 Transaction transaction = new Transaction("Deposit", Integer.valueOf(txtf_amount.getText()), c.getId());
                 List<Transaction> t = List.of(new Transaction[]{transaction});
-                ObjectFinder.writeTransaction(t, c.getId());
+                ObjectFinder.writeTransaction(t, c.getId(), false);
                 clear();
                 alert(Alert.AlertType.INFORMATION, "Success", "Money Deposited Successfully!!");
             } catch (NumberFormatException ex){
