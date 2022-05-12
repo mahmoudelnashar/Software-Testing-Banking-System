@@ -34,6 +34,23 @@
     -fx-cursor: hand;
 }
 
-.text-field{
+.text-field {
     -fx-background-radius: 5px;
+    -fx-border-width:1px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+    -fx-font : 16 "Segoe UI Semilight"
+}
+
+
+.items{
+    -fx-font : 16 "Segoe UI Semilight"
+}
+
+#comboBox_bill_type .text-field{
+    -fx-border-width:0px;
+}
+
+#comboBox_bill_type{
+    -fx-font : 16 "Segoe UI Semilight"
 }
