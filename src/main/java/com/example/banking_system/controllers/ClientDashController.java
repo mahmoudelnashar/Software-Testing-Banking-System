@@ -8,25 +8,31 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class ClientDashController {
+public class ClientDashController implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
     private static Client client;
 
     @FXML
-    TextField textf_user;
+    Label welcome_label;
+    @FXML
+    Label account_label;
 
     @FXML
     public void to_pay_bill(ActionEvent event) throws IOException {
@@ -102,4 +108,9 @@ public class ClientDashController {
         stage.show();
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        welcome_label.setText("Welcome, "+client.getName());
+        account_label.setText("Account Number: " + client.getAccount().getId());
+    }
 }
