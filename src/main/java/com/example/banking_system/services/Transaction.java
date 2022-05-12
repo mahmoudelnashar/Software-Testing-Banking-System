@@ -2,7 +2,9 @@ package com.example.banking_system.services;
 
 import com.opencsv.bean.CsvBindByName;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,22 +18,29 @@ public class Transaction {
     @CsvBindByName(column = "amount", required = true)
     private int amount;
 
+    public Transaction(){}
 
+    public Transaction(String type, int amount, String client_id) throws IOException, URISyntaxException {
+        this.type = type;
+        this.amount = amount;
+        this.setAutoId(client_id);
+    }
     public Transaction(String type, int amount) {
         this.type = type;
         this.amount = amount;
+        this.id = "1";
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id, String client_id) {
-        try (Stream<String> stream = Files.lines(Path.of("/com/example/banking_system/database/"+client_id+".csv"), StandardCharsets.UTF_8)) {
-            this.id = String.valueOf(stream.count());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void setAutoId(String client_id) throws IOException, URISyntaxException {
+        this.id = String.valueOf(ObjectFinder.getTransactions(client_id).size()+1);
+    }
+
+    public void setId(String id){
+        this.id = id;
     }
 
     public String getType() {
@@ -48,5 +57,10 @@ public class Transaction {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return  id +"," +amount + "," +type + "\n";
     }
 }

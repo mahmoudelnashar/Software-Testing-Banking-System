@@ -32,20 +32,27 @@ public class Client {
     private String pass;
     @CsvBindByName(column = "email", required = true)
     private String email;
+    @CsvBindByName(column = "mart", required = true)
+    private String mart;
     @CsvRecurse
     private Account account;
 
-    public Client(String name, String addr, String mob, String username, String pass, String email) throws FileNotFoundException {
+    public Client(){}
+
+    public Client(String ssn,String name, String addr, String mob, String username, String pass, String email) throws FileNotFoundException {
+        if(ssn.equals("") || name.equals("") || addr.equals("") || mob.equals("") || username.equals("") || pass.equals("") || email.equals("")) throw new NullPointerException();
         this.name = name;
         this.addr = addr;
         this.mob = mob;
         this.username = username;
         this.pass = pass;
         this.email = email;
-        this.setId();
+        this.id = ssn;
+        this.setAccId();
     }
 
-    public Client(String name, String addr, String mob, String tele, String username, String pass, String email) throws FileNotFoundException {
+    public Client(String ssn, String name, String addr, String mob, String tele, String username, String pass, String email) throws FileNotFoundException {
+        if(ssn.equals("") || name.equals("") || addr.equals("") || mob.equals("") || username.equals("") || pass.equals("") || email.equals("")) throw new NullPointerException();
         this.name = name;
         this.addr = addr;
         this.mob = mob;
@@ -53,10 +60,12 @@ public class Client {
         this.username = username;
         this.pass = pass;
         this.email = email;
-        this.setId();
+        this.id = ssn;
+        this.setAccId();
     }
 
-    public Client(String name, String addr, String mob, String tele, String occupation, int salary, String username, String pass, String email) throws FileNotFoundException {
+    public Client(String ssn,String name, String addr, String mob, String tele, String occupation, int salary, String username, String pass, String email) throws FileNotFoundException {
+        if(ssn.equals("") || name.equals("") || addr.equals("") || mob.equals("") || username.equals("") || pass.equals("") || email.equals("")) throw new NullPointerException();
         this.name = name;
         this.addr = addr;
         this.mob = mob;
@@ -65,8 +74,25 @@ public class Client {
         this.salary = salary;
         this.username = username;
         this.pass = pass;
-        this.setId();
+        this.id = ssn;
+        this.setAccId();
 
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+
+    public String getMart() {
+        return mart;
+    }
+
+    public void setMart(String mart) {
+        this.mart = mart;
     }
 
     public String getName() {
@@ -77,12 +103,8 @@ public class Client {
         this.name = name;
     }
 
-    private void setId() throws FileNotFoundException {
-        try (Stream<String> stream = Files.lines(Path.of("/com/example/banking_system/database/clients.csv"), StandardCharsets.UTF_8)) {
-            this.id = String.valueOf(stream.count());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void setAccId() {
+        account = new Account(0, this.id);
     }
 
     public String getAddr() {
@@ -155,5 +177,11 @@ public class Client {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    @Override
+    public String toString(){
+        return this.id + ","+this.name + ","+this.email + ","+this.username + ","+this.mob + ","+this.tele + ","+this.addr + ","+this.occupation + ","+ this.salary + ","+this.pass + ","+this.account.getId() + ","+this.account.getBalance() +","+this.mart+"\n";
+
     }
 }

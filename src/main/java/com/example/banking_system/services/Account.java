@@ -13,6 +13,8 @@ public class Account {
         this.id = id;
     }
 
+    public Account(){}
+
     public int getBalance() {
         return balance;
     }
@@ -37,5 +39,9 @@ public class Account {
             return false;
         }
 
+    }
+
+    public void increase_balance(int amnt){
+        this.balance += amnt;
     }
 }

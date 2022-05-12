@@ -25,7 +25,7 @@
     -fx-border-color: #000000;
 }
 
-.table-view .table-cell{
+.table-view {
     -fx-border-width: 1px;
     -fx-border-color: #000000;
 }
