@@ -2,21 +2,29 @@ package com.example.banking_system.controllers;
 
 import com.example.banking_system.services.Client;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-
-public class BillController {
+public class BillController implements Initializable {
     Parent root;
     Stage stage;
     Scene scene;
 
     private Client client;
+
+    @FXML
+    private ComboBox comboBox_bill_type;
 
 
     public void cancel_to_ClientDash(ActionEvent event) throws IOException {
@@ -49,5 +57,10 @@ public class BillController {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }

@@ -1,2 +1,2 @@
-"id","name","email","username","mob","tele","addr","occupation","salary","pass","account_number","balance","mart"
-"23152346","omar","dfsghfd","omar2211","4326234","123456789","fgfds","dsfhsdfh","1200","omar2211","23152346","2400","dfhsdfh"
+id,name,email,username,mob,tele,addr,occupation,salary,pass,account_number,balance,mart
+123,omar,omar@gmail.com,user1,12432582305,12409124,o,q,120,pass1,123,120,q
