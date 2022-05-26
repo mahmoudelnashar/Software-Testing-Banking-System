@@ -32,6 +32,9 @@ public class Account {
     }
 
     public boolean decrease_balance(int amount){
+        if(amount < 0){
+            return false;
+        }
         if(amount <= this.balance){
             balance -= amount;
             return true;
@@ -41,7 +44,11 @@ public class Account {
 
     }
 
-    public void increase_balance(int amnt){
+    public boolean increase_balance(int amnt){
+        if(amnt < 0){
+            return false;
+        }
         this.balance += amnt;
+        return true;
     }
 }

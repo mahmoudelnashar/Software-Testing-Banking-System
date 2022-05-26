@@ -18,6 +18,10 @@ public class ObjectFinder {
     public static List<Transaction> transactions = new ArrayList<>();
     private static String client_path;
 
+    public static String getClient_path() {
+        return client_path;
+    }
+
     public static void init() throws FileNotFoundException, URISyntaxException {
         client_path = Paths.get(ObjectFinder
                 .class.getResource("/com/example/banking_system/database/clients.csv")
@@ -116,5 +120,10 @@ public class ObjectFinder {
             writer.write(t.toString());
         }
         writer.close();
+    }
+    public static String getTransactionPath(String client_id) throws URISyntaxException {
+        String source = Paths.get(ObjectFinder.class.getResource("/com/example/banking_system/database").toURI()).toFile().getAbsolutePath();
+        String path = source+"/"+client_id+".csv";
+        return path;
     }
 }
