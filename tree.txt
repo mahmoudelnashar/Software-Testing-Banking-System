@@ -1,0 +1,135 @@
+Banking_System
+¦   .gitignore
+¦   banking_system.iml
+¦   pom.xml
+¦   tree.txt
+¦       
++---src
+¦   +---main
+¦   ¦   +---java
+¦   ¦   ¦   ¦   module-info.java
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---com
+¦   ¦   ¦       +---example
+¦   ¦   ¦           +---banking_system
+¦   ¦   ¦               ¦   App.java
+¦   ¦   ¦               ¦   
+¦   ¦   ¦               +---controllers
+¦   ¦   ¦               ¦       AdminDashController.java
+¦   ¦   ¦               ¦       BalanceController.java
+¦   ¦   ¦               ¦       BillController.java
+¦   ¦   ¦               ¦       ClientDashController.java
+¦   ¦   ¦               ¦       DepositController.java
+¦   ¦   ¦               ¦       EditClientController.java
+¦   ¦   ¦               ¦       HistoryController.java
+¦   ¦   ¦               ¦       LoginController.java
+¦   ¦   ¦               ¦       NewClientController.java
+¦   ¦   ¦               ¦       TransferController.java
+¦   ¦   ¦               ¦       
+¦   ¦   ¦               +---services
+¦   ¦   ¦                       Account.java
+¦   ¦   ¦                       Client.java
+¦   ¦   ¦                       ObjectFinder.java
+¦   ¦   ¦                       Transaction.java
+¦   ¦   ¦                       
+¦   ¦   +---resources
+¦   ¦       +---com
+¦   ¦           +---example
+¦   ¦               +---banking_system
+¦   ¦                   +---css
+¦   ¦                   ¦       admin-dash.css
+¦   ¦                   ¦       balance.css
+¦   ¦                   ¦       client-dash.css
+¦   ¦                   ¦       deposit.css
+¦   ¦                   ¦       edit-client.css
+¦   ¦                   ¦       history.css
+¦   ¦                   ¦       login.css
+¦   ¦                   ¦       transfer.css
+¦   ¦                   ¦       
+¦   ¦                   +---database
+¦   ¦                   ¦       clients.csv
+¦   ¦                   ¦       
+¦   ¦                   +---views
+¦   ¦                           admin-dash.fxml
+¦   ¦                           balance.fxml
+¦   ¦                           client-dash.fxml
+¦   ¦                           deposit.fxml
+¦   ¦                           edit-client.fxml
+¦   ¦                           history.fxml
+¦   ¦                           login.fxml
+¦   ¦                           pay-bill.fxml
+¦   ¦                           reg_new_client.fxml
+¦   ¦                           transfer.fxml
+¦   ¦                           
+¦   +---test
+¦       +---java
+¦               AccountTest.java
+¦               ClientTest.java
+¦               ObjectFinderTest.java
+¦               TransactionTest.java
+¦               
++---target
+    +---classes
+    ¦   ¦   module-info.class
+    ¦   ¦   
+    ¦   +---com
+    ¦       +---example
+    ¦           +---banking_system
+    ¦               ¦   App.class
+    ¦               ¦   
+    ¦               +---controllers
+    ¦               ¦       AdminDashController.class
+    ¦               ¦       BalanceController.class
+    ¦               ¦       BillController.class
+    ¦               ¦       ClientDashController.class
+    ¦               ¦       DepositController.class
+    ¦               ¦       EditClientController.class
+    ¦               ¦       HistoryController.class
+    ¦               ¦       LoginController.class
+    ¦               ¦       NewClientController.class
+    ¦               ¦       TransferController.class
+    ¦               ¦       
+    ¦               +---css
+    ¦               ¦       admin-dash.css
+    ¦               ¦       balance.css
+    ¦               ¦       client-dash.css
+    ¦               ¦       deposit.css
+    ¦               ¦       edit-client.css
+    ¦               ¦       history.css
+    ¦               ¦       login.css
+    ¦               ¦       transfer.css
+    ¦               ¦       
+    ¦               +---database
+    ¦               ¦       123.csv
+    ¦               ¦       3263567.csv
+    ¦               ¦       clients.csv
+    ¦               ¦       
+    ¦               +---services
+    ¦               ¦       Account.class
+    ¦               ¦       Client.class
+    ¦               ¦       ObjectFinder.class
+    ¦               ¦       Transaction.class
+    ¦               ¦       
+    ¦               +---views
+    ¦                       admin-dash.fxml
+    ¦                       balance.fxml
+    ¦                       client-dash.fxml
+    ¦                       deposit.fxml
+    ¦                       edit-client.fxml
+    ¦                       history.fxml
+    ¦                       login.fxml
+    ¦                       pay-bill.fxml
+    ¦                       reg_new_client.fxml
+    ¦                       transfer.fxml
+    ¦                       
+    +---generated-sources
+    ¦   +---annotations
+    +---generated-test-sources
+    ¦   +---test-annotations
+    +---test-classes
+            AccountTest.class
+            ClientTest.class
+            ObjectFinderTest$WritingUpdatingEntriesTests.class
+            ObjectFinderTest.class
+            TransactionTest.class
+            
