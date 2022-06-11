@@ -92,6 +92,10 @@ public class NewClientController {
             c.setMart(textf_mart.getText());
         }
         if(c != null){
+            Client c1 = ObjectFinder.findClient(c.getUsername(), c.getPass());
+            if(c1 == null){
+                alert("client already exists!");
+            }
             List<Client> l = List.of(new Client[]{c});
             Transaction tr = new Transaction("Account Opening", Integer.valueOf(textf_deposit_amnt.getText()));
             List<Transaction> tl = List.of(new Transaction[]{tr});

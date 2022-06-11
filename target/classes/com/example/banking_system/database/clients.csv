@@ -1,1 +1,3 @@
-id,name,email,username,mob,tele,addr,occupation,salary,pass,account_number,balance,mart
+"id","name","email","username","mob","tele","addr","occupation","salary","pass","account_number","balance","mart"
+"123","abdo","abdo123@net.com","user1","01111","01111","myaddr","engineer","11000","pass1","123","123500","Single"
+"1122","omar","01111","omar","1122","011111","omar","omar","1122","1122","1122","1000","omar"

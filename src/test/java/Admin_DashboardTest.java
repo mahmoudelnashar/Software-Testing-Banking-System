@@ -76,7 +76,7 @@ public class Admin_DashboardTest extends ApplicationTest {
         robot.clickOn("#textf_addr").write("omar");
         robot.clickOn("#textf_occ").write("omar");
         robot.clickOn("#textf_salary").write("1122");
-        robot.clickOn("#textf_mart").write("omar");
+        robot.clickOn("#textf_mart").write("single");
         robot.clickOn("#textf_deposit_amnt").write("1122");
         robot.clickOn("#textf_name").write("omar");
         robot.clickOn("#textf_ssn").write("1122");

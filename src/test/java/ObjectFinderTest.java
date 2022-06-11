@@ -6,11 +6,9 @@ import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import org.junit.jupiter.api.*;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +38,10 @@ public class ObjectFinderTest {
     @Nested
     public class WritingUpdatingEntriesTests{
         @BeforeEach
-        public void before() throws FileNotFoundException, URISyntaxException {
+        public void before() throws IOException, URISyntaxException {
+            FileWriter fw = new FileWriter(Paths.get(ObjectFinder.class.getResource("/com/example/banking_system/database/clients.csv")
+                    .toURI()).toFile().getAbsolutePath(), true);
+            fw.write("");
             ObjectFinder.init();
         }
 
@@ -77,16 +78,18 @@ public class ObjectFinderTest {
         }
         @Test
         public void writeTransactionTest() throws IOException, URISyntaxException, CsvException {
+            String source = Paths.get(ObjectFinder.class.getResource("/com/example/banking_system/database").toURI()).toFile().getAbsolutePath();
+            String path = source+"/123.csv";
             Transaction t = new Transaction("Water", 200,"123");
             ObjectFinder.writeTransaction(List.of(new Transaction[]{t}), "123", false);
             List<Transaction> trs = ObjectFinder.getTransactions("123");
             assertEquals(t.getType(), trs.get(trs.size()-1).getType());
             assertEquals(t.getAmount(), trs.get(trs.size()-1).getAmount());
-            CSVReader reader = new CSVReader(new FileReader("D:\\Programming\\banking-system\\target\\classes\\com\\example\\banking_system\\database\\123.csv"));
+            CSVReader reader = new CSVReader(new FileReader(path));
             List<String[]> strings = reader.readAll();
             strings.remove(strings.size()-1);
             reader.close();
-            CSVWriter writer = new CSVWriter(new FileWriter("D:\\Programming\\banking-system\\target\\classes\\com\\example\\banking_system\\database\\123.csv"));
+            CSVWriter writer = new CSVWriter(new FileWriter(path));
             writer.writeAll(strings);
             writer.close();
 

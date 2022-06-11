@@ -27,8 +27,6 @@ class Login_test {
     @Test
     void test1(FxRobot robot){
         Button btn=robot.lookup("#login_btn").queryAs(Button.class);
-//        assertNotNull(btn);
-//        robot.clickOn(btn);
         robot.clickOn("#textf_user").write("admin123");
         robot.clickOn("#textf_pass").write("admin");
         robot.clickOn(btn);

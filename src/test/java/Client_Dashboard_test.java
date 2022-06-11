@@ -88,7 +88,7 @@ public class Client_Dashboard_test extends ApplicationTest {
     @DisplayName("Transfer money and pay bills")
     void client_dash_test3(FxRobot robot){
         robot.clickOn(robot.lookup("#transfer_btn").queryAs(Button.class));
-        robot.clickOn("#txtf_acc_no").write("1111");
+        robot.clickOn("#txtf_acc_no").write("123");
         robot.clickOn("#txtf_amount").write("500");
         robot.clickOn(robot.lookup("#transfer_btn").queryAs(Button.class));
         verifyThat(".information", Node::isVisible);
