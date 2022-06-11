@@ -1,3 +1,5 @@
+package Integration_test_suite;
+
 import com.example.banking_system.services.ObjectFinder;
 import com.example.banking_system.services.Transaction;
 import com.opencsv.CSVReader;

@@ -21,3 +21,8 @@ public class App extends Application {
 
     }
 }
+class MyAppLauncher {
+    public static void main(String[] args) {
+        App.main(args);
+    }
+}

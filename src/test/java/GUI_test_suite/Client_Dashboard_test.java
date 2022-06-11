@@ -1,22 +1,21 @@
-import javafx.application.Application;
-import javafx.application.Platform;
+package GUI_test_suite;
+
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
-import javafx.stage.StageStyle;
 import org.junit.jupiter.api.BeforeEach;
 
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testfx.api.FxAssert.verifyThat;
 
 import com.example.banking_system.App;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,12 +25,16 @@ import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.framework.junit5.Start;
 
-import java.awt.*;
 import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 @ExtendWith(ApplicationExtension.class)
 public class Client_Dashboard_test extends ApplicationTest {
+
+    public String getTextfield(FxRobot robot, String txt){
+        TextField t=robot.lookup(txt).queryAs(TextField.class);
+        return t.getText();
+    }
+
     public void cleartxt(FxRobot robot, String s){
 
         robot.push(KeyCode.CONTROL,KeyCode.A);
@@ -69,7 +72,6 @@ public class Client_Dashboard_test extends ApplicationTest {
         btn=robot.lookup("#history_btn").queryAs(Button.class);
         robot.clickOn(btn);
         robot.clickOn(robot.lookup("#back_btn").queryAs(Button.class));
-
     }
 
     @Test
@@ -77,7 +79,13 @@ public class Client_Dashboard_test extends ApplicationTest {
     void client_dash_test2(FxRobot robot){
         robot.clickOn(robot.lookup("#transfer_btn").queryAs(Button.class));
         robot.clickOn("#txtf_acc_no").write("1111");
-        robot.clickOn("#txtf_amount").write("5000");
+        robot.clickOn("#txtf_amount").write("50000000");
+
+        String txt = getTextfield(robot,"#txtf_acc_no");
+        assertEquals("1111", txt);
+        txt = getTextfield(robot,"#txtf_amount");
+        assertEquals("50000000", txt);
+
         robot.clickOn(robot.lookup("#transfer_btn").queryAs(Button.class));
         verifyThat(".error", Node::isVisible);
         interact(()->((Stage)((lookup(".error").query())).getScene().getWindow()).close());
@@ -89,7 +97,13 @@ public class Client_Dashboard_test extends ApplicationTest {
     void client_dash_test3(FxRobot robot){
         robot.clickOn(robot.lookup("#transfer_btn").queryAs(Button.class));
         robot.clickOn("#txtf_acc_no").write("123");
-        robot.clickOn("#txtf_amount").write("500");
+        robot.clickOn("#txtf_amount").write("10");
+
+        String txt = getTextfield(robot,"#txtf_acc_no");
+        assertEquals("123", txt);
+        txt = getTextfield(robot,"#txtf_amount");
+        assertEquals("10", txt);
+
         robot.clickOn(robot.lookup("#transfer_btn").queryAs(Button.class));
         verifyThat(".information", Node::isVisible);
         interact(()->((Stage)((lookup(".information").query())).getScene().getWindow()).close());
@@ -115,15 +129,18 @@ public class Client_Dashboard_test extends ApplicationTest {
         robot.clickOn("#edit_email_label");
 
         robot.clickOn("#textf_email");
-//        for (int i = 0; i <20 ; i++) {
-//            robot.push(KeyCode.BACK_SPACE);
-//        }
         cleartxt(robot, "#textf_email");
         robot.write("Omar@gmail.com");
 
         robot.clickOn("#edit_mob_label");
+        robot.clickOn("#textf_mob");
         cleartxt(robot, "#textf_mob");
         robot.write("01111");
+
+        String txt = getTextfield(robot,"#textf_email");
+        assertEquals("Omar@gmail.com", txt);
+        txt = getTextfield(robot,"#textf_mob");
+        assertEquals("01111", txt);
 
         robot.clickOn(robot.lookup("#save_btn").queryAs(Button.class));
         verifyThat(".information", Node::isVisible);

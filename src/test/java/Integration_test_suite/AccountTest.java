@@ -1,3 +1,5 @@
+package Integration_test_suite;
+
 import com.example.banking_system.services.Account;
 import org.junit.jupiter.api.*;
 

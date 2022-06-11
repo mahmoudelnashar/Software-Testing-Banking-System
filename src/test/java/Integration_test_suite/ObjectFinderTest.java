@@ -1,3 +1,5 @@
+package Integration_test_suite;
+
 import com.example.banking_system.services.Client;
 import com.example.banking_system.services.ObjectFinder;
 import com.example.banking_system.services.Transaction;
@@ -69,11 +71,11 @@ public class ObjectFinderTest {
 
         @Test
         public void updateClientTest() throws IOException, CsvException, URISyntaxException {
-            Client c = ObjectFinder.clients.get(1);
+            Client c = ObjectFinder.clients.get(0);
             c.setTele("011111");
             ObjectFinder.update(c);
             ObjectFinder.init();
-            Client c1 = ObjectFinder.clients.get(1);
+            Client c1 = ObjectFinder.clients.get(0);
             assertEquals(c.getTele(), c1.getTele());
         }
         @Test

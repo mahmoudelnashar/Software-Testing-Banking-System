@@ -1,3 +1,5 @@
+package Integration_test_suite;
+
 import com.example.banking_system.services.Client;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.function.Executable;
@@ -22,5 +24,9 @@ public class ClientTest {
     @Test
     public void NullexceptionTest() throws FileNotFoundException {
         assertThrows(NullPointerException.class, () -> new Client("123", "", "iksdbaod dsgfho", "01883883132", "omar1111", "pass123", "osn2211@eng.com"));
+    }
+
+    public static void main(String[] args) {
+
     }
 }
