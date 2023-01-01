@@ -1,3 +1,8 @@
+# Software-Testing-Project (Junior - Spring 2022)
+
+- Team project
+- Done in Java
+
 # banking-system
 
 ### default admin credentials:
