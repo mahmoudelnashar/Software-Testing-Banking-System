@@ -2,6 +2,7 @@
 
 - Team project
 - Done in Java
+- Banking System with Testing and Validation
 
 # banking-system
 
